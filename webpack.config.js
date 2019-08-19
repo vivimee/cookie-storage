@@ -4,7 +4,10 @@ module.exports = {
   entry: './src/index.js',
   mode: 'production',
   output: {
-    path: path.resolve('dist')
+    path: path.resolve('dist'),
+    library: 'library',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   module: {
     rules: [
