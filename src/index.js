@@ -13,17 +13,22 @@ function set(key, value, { expires = -1 } = {}) {
   localStorage.setItem(key, JSON.stringify(item));
 }
 
+function remove(key) {
+  localStorage.removeItem(key);
+}
+
 function get(key) {
   const item = JSON.parse(localStorage.getItem(key));
   if (item) {
-    const value = item.type === 'string' ? item.valueString : JSON.parse(valueString);
+    const { type, value: valueString, setAt, exp } = item;
+    if (exp > -1 && Date.now() - setAt > exp) {
+      remove(key);
+      return undefined;
+    }
+    const value = type === 'string' ? valueString : JSON.parse(valueString);
     return value;
   }
   return undefined;
-}
-
-function remove(key) {
-  localStorage.removeItem(key);
 }
 
 export default {
