@@ -6,7 +6,10 @@
   "author": "<vivimee@163.com>",
   "license": "MIT",
   "description": "Use localStorage instead of cookie.",
-  "keywords": ["localStorage", "cookie"],
+  "keywords": [
+    "localStorage",
+    "cookie"
+  ],
   "files": [
     "index.js",
     "dist"
