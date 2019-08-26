@@ -1,6 +1,6 @@
 {
   "name": "storage-as-cookie",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "repository": "git@github.com:vivimee/cookie-storage.git",
   "author": "<vivimee@163.com>",
